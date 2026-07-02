@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测测你的灵魂像什么食物</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- 背景装饰层 -->
+    <div class="bg-decor">
+        <div class="bg-circle circle-1"></div>
+        <div class="bg-circle circle-2"></div>
+        <div class="bg-circle circle-3"></div>
+        <div class="bg-dots"></div>
+    </div>
+
+    <!-- 主容器 -->
+    <div class="app-container" id="appContainer">
+        <!-- 阶段1：开场封面 -->
+        <div class="screen active" id="screen-opening">
+            <div class="card opening-card">
+                <div class="card-inner">
+                    <div class="icon-area">
+                        <span class="icon-emoji">🍽️</span>
+                    </div>
+                    <h1 class="title-main">
+                        <span class="title-line">测测你的灵魂</span>
+                        <span class="title-line">像什么食物</span>
+                    </h1>
+                    <p class="subtitle">一份关于你自己的小小测试。</p>
+                    <button class="btn btn-primary btn-large" id="btnStart">
+                        开始测试
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 阶段2：黑屏层 -->
+        <div class="screen screen-blackout" id="screenBlackout">
+            <div class="blackout-content">
+                <p class="blackout-text" id="blackoutText1">等一下。</p>
+                <p class="blackout-text blackout-text-delay" id="blackoutText2">你确定要做这个测试吗？</p>
+                <div class="blackout-btns" id="blackoutBtns">
+                    <button class="btn btn-outline" id="btnNotSure">不确定</button>
+                    <button class="btn btn-primary" id="btnSure">确定</button>
+                </div>
+                <p class="blackout-subtext" id="blackoutSubtext"></p>
+            </div>
+        </div>
+
+        <!-- 阶段3：RIKI弹窗 -->
+        <div class="screen" id="screenRikiIntro">
+            <div class="overlay-bg"></div>
+            <div class="riki-modal" id="rikiModal">
+                <div class="riki-modal-content">
+                    <p class="riki-line" id="rikiLine1">你好。</p>
+                    <p class="riki-line" id="rikiLine2">我叫RIKI，是这份测试的制作者。</p>
+                    <p class="riki-line" id="rikiLine3">我在等一些事情结束，所以做了这个来打发时间。</p>
+                    <p class="riki-line" id="rikiLine4">测试共有12题。</p>
+                    <p class="riki-line" id="rikiLine5">请认真作答。</p>
+                    <p class="riki-line" id="rikiLine6">……认真一点。</p>
+                    <button class="btn btn-primary" id="btnOkay">好的</button>
+                    <p class="riki-extra" id="rikiExtra"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 阶段4：答题界面 -->
+        <div class="screen" id="screenQuiz">
+            <div class="quiz-container">
+                <div class="progress-area">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">1 / 12</span>
+                </div>
+                <div class="card quiz-card" id="quizCard">
+                    <div class="card-inner">
+                        <div class="riki-note" id="rikiNote"></div>
+                        <h2 class="question-text" id="questionText"></h2>
+                        <div class="options-list" id="optionsList"></div>
+                    </div>
+                </div>
+                <div class="meta-overlay" id="metaOverlay">
+                    <div class="meta-content" id="metaContent"></div>
+                </div>
+                <div class="warm-bg-overlay" id="warmBgOverlay"></div>
+            </div>
+        </div>
+
+        <!-- 阶段5：计算中 -->
+        <div class="screen" id="screenCalculating">
+            <div class="calculating-container">
+                <div class="spinner"></div>
+                <p class="calculating-text">计算结果中...</p>
+            </div>
+        </div>
+
+        <!-- 阶段6：结果页 -->
+        <div class="screen" id="screenResult">
+            <!-- 动态渲染 -->
+        </div>
+
+        <!-- 阶段7：测试后台 -->
+        <div class="screen" id="screenBackend">
+            <div class="backend-container">
+                <div class="backend-topbar">
+                    <span class="backend-title">本地草稿 · 未联网 · 摸鱼产物 v0.9</span>
+                    <button class="backend-close" id="btnBackendClose">✕</button>
+                </div>
+                <div class="backend-link">
+                    <a href="https://wszx328.github.io/room/" target="_blank">ROOM酒店招聘页面</a>
+                </div>
+                <div class="backend-main">
+                    <div class="backend-sidebar" id="backendSidebar">
+                        <!-- 目录树由 JS 动态生成 -->
+                    </div>
+                    <div class="backend-preview" id="backendPreview">
+                        <div class="preview-placeholder">选择一个文件以查看内容</div>
+                    </div>
+                </div>
+                <div class="backend-chat" id="backendChat" style="display:none;">
+                    <div class="chat-header">R</div>
+                    <div class="chat-messages" id="chatMessages"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/puzzles.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/meta.js"></script>
+    <script src="js/results.js"></script>
+    <script src="js/backend.js"></script>
+</body>
+</html>

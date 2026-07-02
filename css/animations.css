@@ -1,0 +1,21 @@
+/* 保留的通用动画关键帧，其他动画已写入style.css */
+@keyframes blinkCaret {
+    0%, 100% { border-right-color: var(--accent); }
+    50% { border-right-color: transparent; }
+}
+@keyframes pulse {
+    0%, 100% { opacity: 1; } 50% { opacity: 0.5; }
+}
+@keyframes shake {
+    0%, 100% { transform: translateX(0); } 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); }
+}
+@keyframes glitch {
+    0% { transform: skew(0deg); opacity: 1; } 20% { transform: skew(2deg); opacity: 0.8; } 40% { transform: skew(-1deg); opacity: 1; } 60% { transform: skew(1deg); opacity: 0.7; } 80% { transform: skew(-2deg); opacity: 0.9; } 100% { transform: skew(0deg); opacity: 1; }
+}
+@keyframes slowReveal {
+    from { opacity: 0; filter: blur(4px); } to { opacity: 1; filter: blur(0); }
+}
+@keyframes bigTextIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+@keyframes bigTextOut { from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(1.03); } }
+@keyframes periodPulse { 0%,100%{opacity:0.6;} 50%{opacity:1;} }
+@keyframes microFlash { 0%{opacity:0;} 30%{opacity:0.35;} 70%{opacity:0.35;} 100%{opacity:0;} }
